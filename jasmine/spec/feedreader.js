@@ -8,9 +8,9 @@
  * since some of these tests may require DOM elements. We want
  * to ensure they don't run until the DOM is ready.
  */
-$(function() {
-    describe('RSS Feeds', function() {
-        it('are defined', function() {
+$(() => {
+    describe('RSS Feeds', () => {
+        it('are defined', () => {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
@@ -48,8 +48,6 @@ $(function() {
       })
     });
 
-    /* TODO: Write a new test suite named "Initial Entries" */
-
     describe('Initial Entries', () => {
       beforeEach((done) => {
         loadFeed(0, () => {
@@ -80,4 +78,4 @@ $(function() {
         done();
       })
     })
-}());
+})();
