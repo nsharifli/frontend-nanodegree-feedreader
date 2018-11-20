@@ -33,6 +33,7 @@ $(() => {
     describe('The menu', () => {
       it('is hidden by default', () => {
         expect($('.slide-menu')).not.toBeVisible;
+        expect($('body').hasClass('menu-hidden')).toBe(true);
       })
 
       it('changes visibility when menu icon is clicked', () => {
@@ -64,6 +65,7 @@ $(() => {
 
     describe('New Feed Selection', () => {
       let firstContent, secondContent;
+
       beforeEach((done) => {
         loadFeed(0, () => {
           firstContent = $('.feed').text();
@@ -73,6 +75,7 @@ $(() => {
           })
         })
       })
+
       it('changes feed on new load feed', (done) => {
         expect(firstContent).not.toEqual(secondContent);
         done();
